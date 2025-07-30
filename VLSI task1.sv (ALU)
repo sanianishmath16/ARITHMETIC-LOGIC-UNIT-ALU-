@@ -1,0 +1,47 @@
+// ALU Module: Supports ADD, SUB, AND, OR, NOT
+module ALU (
+    input  [3:0] A,     // 4-bit input A
+    input  [3:0] B,     // 4-bit input B
+    input  [2:0] SEL,   // 3-bit operation selector
+    output reg [3:0] OUT,  // 4-bit result
+    output reg COUT     // Carry-out for arithmetic operations
+);
+
+// Operation Codes
+// 000 -> ADD
+// 001 -> SUB
+// 010 -> AND
+// 011 -> OR
+// 100 -> NOT (on A)
+
+always @(*) begin
+    case (SEL)
+        3'b000: begin
+            {COUT, OUT} = A + B;  // ADD
+        end
+        3'b001: begin
+            {COUT, OUT} = A - B;  // SUB
+        end
+        3'b010: begin
+            OUT = A & B;          // AND
+            COUT = 0;
+        end
+        3'b011: begin
+            OUT = A | B;          // OR
+            COUT = 0;
+        end
+        3'b100: begin
+            OUT = ~A;             // NOT A
+            COUT = 0;
+        end
+        default: begin
+            OUT = 4'b0000;
+            COUT = 0;
+        end
+    endcase
+end
+
+endmodule
+
+   
+ 
