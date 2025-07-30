@@ -1,0 +1,39 @@
+ SIMULATION REPORT STRUCTURE (for Manual or Tool Output)
+
+📄 VLSI Mini Project Report: ALU Design
+👤 Name: SANIA NISHMATH.M
+🏫 Department: ECE
+📅 Date:30/07/2025
+
+1. Objective
+To design a 4-bit Arithmetic Logic Unit (ALU) using Verilog that supports addition, subtraction, bitwise AND, OR, and NOT operations. Simulation is performed using a testbench to validate functionality.
+
+2. Tools Used
+Verilog HDL
+
+Xilinx Vivado / ModelSim (for simulation)
+
+GTKWave (for waveform visualization)
+
+3. ALU Operations
+SEL Code	Operation	Description
+000	ADD	A + B
+001	SUB	A - B
+010	AND	A & B
+011	OR	A | B
+100	NOT	~A (only A is used)
+
+4.Here some output table for simulation and ALU:
+| Time | SEL | A    | B    | OUT  | COUT |
+| ---- | --- | ---- | ---- | ---- | ---- |
+| 0ns  | 000 | 0011 | 0001 | 0100 | 0    |
+| 10ns | 001 | 0100 | 0001 | 0011 | 0    |
+| 20ns | 010 | 1100 | 1010 | 1000 | 0    |
+| 30ns | 011 | 1100 | 1010 | 1110 | 0    |
+| 40ns | 100 | 1100 | 0000 | 0011 | 0    |
+| 50ns | 111 | ---- | ---- | 0000 | 0    |
+
+5. Conclusion
+The designed ALU performs arithmetic and logical operations successfully. All operations were verified using testbench and simulation outputs matched expected results.
+
+
